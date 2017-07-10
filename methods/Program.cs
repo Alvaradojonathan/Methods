@@ -28,10 +28,17 @@ namespace methods
             //int age = int.Parse(Console.ReadLine());
             //RetirementCalculator(age);
 
-            double hours = 42.3d;
-            double wage = 12.50d;
+            //double hours = 42.3d;
+            //double wage = 12.50d;
 
-            Console.WriteLine("Your monthly wage is {0}",WageCalculator(hours, wage));
+            //Console.WriteLine("Your monthly wage is {0}", WageCalculator(hours, wage));
+            double price = 17.50d;
+            double tax = 0.08d;
+            double shirts = 4;
+
+            double netCost = NetTotal(price, shirts);
+            double totalCost = TotalWithTax(netCost,tax);
+            Console.WriteLine(totalCost);
         }
         ////Declaring a method = Method header and method body.
         //public static int Add(int firstNumber, int secondNumber)
@@ -54,12 +61,28 @@ namespace methods
         //{
         //    int yearsToRetirment = 65 - userAge;
         //    Console.WriteLine("The user will retire in {0} years.", yearsToRetirment);
+        
+        //public static double WageCalculator(double hoursWorkedWeekly, double hourlyWage)
+        //{
+        //    double monthlyWage = (hoursWorkedWeekly * 52 * hourlyWage) / 12;
+        //    return monthlyWage;
+        //}
 
 
-        public static double WageCalculator(double hoursWorkedWeekly, double hourlyWage)
+
+
+
+        //Create two methods at least one of the methods should contain a non-void return type.
+        //Both methods should take at least one parameter
+        public static double NetTotal(double price, double amount)
         {
-            double monthlyWage = (hoursWorkedWeekly * 52 * hourlyWage) / 12;
-            return monthlyWage;
+            double cost = price * amount;
+            return cost;
+        }
+        public static double TotalWithTax (double netCost, double tax)
+        {
+            double total = (netCost * tax) + netCost;
+            return total;
         }
     }
 }
